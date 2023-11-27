@@ -1,0 +1,15 @@
+Idéalement:
+Server peut faire un GET pour afficher une liste de jeux.
+POST pour rajouter un nouveau jeu.
+DELETE pour enlever un jeu
+PATCH pour modifier un jeu
+
+
+Languages: 
+JS (Express)
+Java
+C#
+Golang 
+Python
+Rust (Si j'ai le tps)
+C++
