@@ -1,6 +1,7 @@
 # Multiserver
-A repository containing the same server remade in multiple programming languages!
+A repository containing the same server remade in multiple programming languages!  
 For now, these are the technologies used : 
+
 [![Programming languages](https://skillicons.dev/icons?i=js,express,py,flask)](https://skillicons.dev)
 
 ## Server
