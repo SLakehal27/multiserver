@@ -7,8 +7,18 @@ port = 5020
 data = json.load(open('./data/games.json'))
 
 @app.route("/")
-def get():
-    return data
+def getGame():
+    return data, 200
+
+@app.route("/<id>")
+def getGameByID(id):
+    try:
+        if(int(id) <= len(data) - 1): 
+            return data[int(id)], 200
+        else : 
+            return "Game not found!", 404
+    except:
+        return "Server error", 500
 
 # Works if the python file is ran
 if __name__ == '__main__':
