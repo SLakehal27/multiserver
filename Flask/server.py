@@ -31,6 +31,9 @@ def getGameByID(id):
 def addGame():
     try:
         recentGame = request.json
+        LIMIT = 2
+        if(len(recentGame) > LIMIT): 
+            return "Game body should not have more than 2 elements", HTTP.get('BAD_REQUEST')
         filtered_data = [game for game in data 
                    if recentGame['title'] != game['title'] or recentGame['release'] != game['release']]
         if(len(filtered_data) == len(data)):
@@ -57,6 +60,19 @@ def deleteGame(id):
         return "Game not found", HTTP.get('NO_CONTENT')
     except:
         return "DELETE error", HTTP.get('SERVER_ERROR')
+
+@app.route("/",methods=["PATCH"])
+def modifyGame():
+    try:
+        recentGame = request.json
+        if(recentGame['id'] <= len(data) - 1):
+            data[recentGame['id']] = recentGame
+            with open(gamepath, 'w') as f:
+                json.dump(data,f,indent=2)
+            return data, HTTP.get('SUCCESS')
+        return "Game not in server!", HTTP.get('BAD_REQUEST')
+    except:
+        return "PATCH error", HTTP.get('SERVER_ERROR')
 
 # Works if the python file is ran
 if __name__ == '__main__':
