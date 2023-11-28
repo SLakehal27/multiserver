@@ -1,0 +1,17 @@
+[
+  {
+    "id": 0,
+    "title": "Super Mario Bros.",
+    "release": 1985
+  },
+  {
+    "id": 1,
+    "title": "Duck Hunt",
+    "release": 1984
+  },
+  {
+    "id": 2,
+    "title": "Kingdom Hearts 2",
+    "release": 2005
+  }
+]
