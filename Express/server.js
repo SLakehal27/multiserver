@@ -5,5 +5,5 @@ const PORT = 5020;
 
 app.use(express.json({limit:"10mb"}));
 app.use(express.urlencoded({extended:true}));
-app.use("/",router);
+app.use("/games",router);
 app.listen(PORT, ()=>{console.log(`Server listening to port ${PORT}`)});

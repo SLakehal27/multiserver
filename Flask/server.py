@@ -5,17 +5,18 @@ import json
 app = Flask(__name__)
 port = 5020
 gamepath = './data/games.json'
+defpath = '/games'
 
 with open(gamepath, 'r') as f:
     data = json.load(f)
 
-@app.route("/")
+@app.route(f"{defpath}/")
 def getGames():
     with open(gamepath, 'r') as f:
         data = json.load(f)
     return data, HTTP.get('SUCCESS')
 
-@app.route("/<id>")
+@app.route(f"{defpath}/<id>")
 def getGameByID(id):
     try:
         with open(gamepath, 'r') as f:
@@ -27,7 +28,7 @@ def getGameByID(id):
     except:
         return "Get by ID error", HTTP.get('SERVER_ERROR')
 
-@app.route("/",methods=["POST"])
+@app.route(f"{defpath}",methods=["POST"])
 def addGame():
     try:
         recentGame = request.json
@@ -49,7 +50,7 @@ def addGame():
     except:
         return "POST error", HTTP.get('SERVER_ERROR')
     
-@app.route("/<id>",methods=["DELETE"])
+@app.route(f"{defpath}/<id>",methods=["DELETE"])
 def deleteGame(id):
     try:
         filtered_data = [game for game in data if game['id'] != int(id)]
@@ -61,7 +62,7 @@ def deleteGame(id):
     except:
         return "DELETE error", HTTP.get('SERVER_ERROR')
 
-@app.route("/",methods=["PATCH"])
+@app.route(f"{defpath}",methods=["PATCH"])
 def modifyGame():
     try:
         recentGame = request.json

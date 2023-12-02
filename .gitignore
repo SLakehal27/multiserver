@@ -1,2 +1,8 @@
 /Express/node_modules
 /Flask/__pycache__
+/Springboot/.mvn/wrapper/maven-wrapper.jar
+/Springboot/src/main/**/target/
+/Springboot/src/test/**/target/
+/Springboot/.vscode/
+/Springboot/HELP.md
+/Springboot/target/
