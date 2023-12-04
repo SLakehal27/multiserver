@@ -1,5 +1,5 @@
 # Multiserver
-A repository containing the same Rest API remade in multiple programming languages!  
+A repository containing the same REST API remade in multiple programming languages!  
 For now, these are the technologies used : 
 
 [![Programming languages](https://skillicons.dev/icons?i=js,express,py,flask,java,spring)](https://skillicons.dev)
